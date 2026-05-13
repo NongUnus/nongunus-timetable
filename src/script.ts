@@ -65,7 +65,7 @@ const SCHEDULE: Record<DayKey, (Subject | null)[]> = {
     { subject: "เคมี",     teacher: "จิรารัตน์", room: "333",    cat: "cat-sci"    },
     { subject: "ชีววิทยา", teacher: "ยุทธพงษ์",  room: "333",    cat: "cat-sci"    },
     { subject: "ฟิสิกส์",  teacher: "รังสิมา",   room: "333",    cat: "cat-sci"    },
-    { subject: "ดนตรี",    teacher: "นิธิภูมิ",  room: "312",    cat: "cat-music"  },
+    { subject: "ดนตรี",    teacher: "นิธิภูมิ",  room: "312",    cat: "cat-art"  },
     null, // homeroom
     null, // ชุมนุม
   ],
