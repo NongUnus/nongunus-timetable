@@ -5,10 +5,10 @@ type Category =
   | "cat-thai"
   | "cat-soc"
   | "cat-health"
-  | "cat-music"
+  | "cat-art"
   | "cat-work";
 
-type DayKey = "จันทร์" | "อังคาร" | "พุธ" | "พฤหัสฯ" | "ศุกร์";
+type DayKey = "จันทร์" | "อังคาร" | "พุธ" | "พฤหัสบดี" | "ศุกร์";
 
 interface Subject {
   subject: string;
@@ -44,23 +44,23 @@ const SCHEDULE: Record<DayKey, (Subject | null)[]> = {
     { subject: "EngSME",       teacher: "แก่นกานต์",  room: "333", cat: "cat-eng"  },
     { subject: "ภาษาไทย",      teacher: "เกียรติสุดา", room: "333", cat: "cat-thai" },
     null, // ค้นคว้า
-    { subject: "สังคมประพาก",  teacher: "",           room: "333", cat: "cat-soc"  },
+    { subject: "สังคมศึกษา",  teacher: "ประพาก",           room: "333", cat: "cat-soc"  },
     { subject: "ชีววิทยา",     teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
     { subject: "ชีววิทยา",     teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
     null, // จิตอาสา
   ],
   อังคาร: [
-    { subject: "สังคมประพาก",        teacher: "",         room: "333", cat: "cat-soc"  },
+    { subject: "สังคมศึกษา",        teacher: "ประพาก",         room: "333", cat: "cat-soc"  },
     null, // แนะแนว
     { subject: "English 3 (ฟัง–พูด)", teacher: "",         room: "333", cat: "cat-eng"  },
     { subject: "English 3 (ฟัง–พูด)", teacher: "",         room: "333", cat: "cat-eng"  },
     null, // ค้นคว้า
     { subject: "คณิตศาสตร์",          teacher: "พันธุ์นิภา", room: "333", cat: "cat-math" },
-    { subject: "คณิตเพิ่มเติม",        teacher: "อัจฉรา",   room: "333", cat: "cat-math" },
-    { subject: "คณิตเพิ่มเติม",        teacher: "อัจฉรา",   room: "333", cat: "cat-math" },
+    { subject: "คณิตศาสตร์เพิ่มเติม",        teacher: "อัจฉรา",   room: "333", cat: "cat-math" },
+    { subject: "คณิตศาสตร์เพิ่มเติม",        teacher: "อัจฉรา",   room: "333", cat: "cat-math" },
   ],
   พุธ: [
-    { subject: "สุขพละ",   teacher: "สวิท",     room: "โรงยิม", cat: "cat-health" },
+    { subject: "สุขศึกษาและพลศึกษา",   teacher: "สุวิท",     room: "โรงยิม", cat: "cat-health" },
     { subject: "เคมี",     teacher: "จิรารัตน์", room: "333",    cat: "cat-sci"    },
     { subject: "เคมี",     teacher: "จิรารัตน์", room: "333",    cat: "cat-sci"    },
     { subject: "ชีววิทยา", teacher: "ยุทธพงษ์",  room: "333",    cat: "cat-sci"    },
@@ -69,18 +69,18 @@ const SCHEDULE: Record<DayKey, (Subject | null)[]> = {
     null, // homeroom
     null, // ชุมนุม
   ],
-  พฤหัสฯ: [
-    { subject: "การงานฯ",       teacher: "เกศราภรณ์", room: "511", cat: "cat-work" },
-    { subject: "การงานฯ",       teacher: "เกศราภรณ์", room: "511", cat: "cat-work" },
-    { subject: "คณิตเพิ่มเติม", teacher: "อัจฉรา",   room: "333", cat: "cat-math" },
+  พฤหัสบดี: [
+    { subject: "การงานอาชีพ",       teacher: "เกศราภรณ์", room: "511", cat: "cat-work" },
+    { subject: "การงานอาชีพ",       teacher: "เกศราภรณ์", room: "511", cat: "cat-work" },
+    { subject: "คณิตศาสตร์เพิ่มเติม", teacher: "อัจฉรา",   room: "333", cat: "cat-math" },
     { subject: "ภาษาไทย",       teacher: "เกียรติสุดา", room: "333", cat: "cat-thai" },
-    { subject: "ว.คำนวณ",       teacher: "ชัยยศ",     room: "721", cat: "cat-sci"  },
+    { subject: "วิทยาการคำนวณ",       teacher: "ชัยยศ",     room: "721", cat: "cat-sci"  },
     { subject: "เคมี",          teacher: "จิรารัตน์", room: "333", cat: "cat-sci"  },
     { subject: "ฟิสิกส์",       teacher: "รังสิมา",   room: "333", cat: "cat-sci"  },
     null, // ค้นคว้า
   ],
   ศุกร์: [
-    { subject: "คณิตเพิ่มเติม", teacher: "อัจฉรา",    room: "333", cat: "cat-math" },
+    { subject: "คณิตศาสตร์เพิ่มเติม", teacher: "อัจฉรา",    room: "333", cat: "cat-math" },
     { subject: "ฟิสิกส์",       teacher: "รังสิมา",   room: "333", cat: "cat-sci"  },
     { subject: "ฟิสิกส์",       teacher: "รังสิมา",   room: "333", cat: "cat-sci"  },
     null, // เวรอาหาร/จิตอาสา
@@ -91,25 +91,25 @@ const SCHEDULE: Record<DayKey, (Subject | null)[]> = {
   ],
 };
 
-const DAYS: DayKey[] = ["จันทร์", "อังคาร", "พุธ", "พฤหัสฯ", "ศุกร์"];
+const DAYS: DayKey[] = ["จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์"];
 
 const JS_DAY_MAP: Record<number, DayKey> = {
   1: "จันทร์",
   2: "อังคาร",
   3: "พุธ",
-  4: "พฤหัสฯ",
+  4: "พฤหัสบดี",
   5: "ศุกร์",
 };
 
 const CAT_LABELS: Record<Category, string> = {
-  "cat-math":   "คณิต",
-  "cat-sci":    "วิทย์",
-  "cat-eng":    "อังกฤษ",
-  "cat-thai":   "ไทย",
-  "cat-soc":    "สังคม",
-  "cat-health": "สุขพละ",
-  "cat-music":  "ดนตรี",
-  "cat-work":   "การงาน",
+  "cat-math":   "คณิตศาสตร์",
+  "cat-sci":    "วิทยาศาสตร์และเทคโนโลยี",
+  "cat-eng":    "ภาษาอังกฤษ",
+  "cat-thai":   "ภาษาไทย",
+  "cat-soc":    "สังคมศึกษา",
+  "cat-health": "สุขศึกษาและพลศึกษา",
+  "cat-art":    "ศิลปะ",
+  "cat-work":   "การงานอาชีพ",
 };
 
 // ── helpers ──────────────────────────────────────────────
