@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "target": "ES2025",
+        "lib": ["ES2025", "DOM", "DOM.Iterable"],
+        "sourceMap": true,
+        "strict": true,
+        "skipLibCheck": true
+    },
+    "include": ["src/**/*"]
+}

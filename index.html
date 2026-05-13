@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ตารางเรียน ม.6/1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="school-label">โรงเรียนเทศบาล ๒ (วัดกะพังสุรินทร์)</div>
+      <h1>ตารางเรียน <span>ม.6/1</span></h1>
+      <div class="term-badge">ภาคเรียนที่ 1/2569 · ห้อง 333</div>
+    </header>
+ 
+    <div class="now-bar">
+      <div class="now-dot"></div>
+      <div class="now-text">
+        <span class="now-time" id="clock">--:--</span>
+        <span class="now-class" id="now-subject">–</span>
+      </div>
+    </div>
+ 
+    <div class="day-tabs" id="dayTabs"></div>
+    <div class="periods-grid" id="periodsGrid"></div>
+ 
+    <footer>timetable · ม.6/1 · 2569</footer>
+  </div>
+ 
+  <script type="module" src="dist/script.js"></script>
+</body>
+</html>
+
