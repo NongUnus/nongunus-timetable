@@ -37,56 +37,56 @@ const PERIODS: Period[] = [
   { num: 8, start: [15, 20], end: [16, 10] },
 ];
 
-// null = คาบที่ไม่แสดง (ชุมนุม, homeroom, ค้นคว้า, จิตอาสา, แนะแนว, เวรอาหาร, ประชุม)
+// null = คาบที่ไม่แสดง (ชุมนุม, homeroom, ค้นคว้า, แนะแนว, ประชุม)
 const SCHEDULE: Record<DayKey, (Subject | null)[]> = {
   จันทร์: [
-    { subject: "EngSME",       teacher: "แก่นกานต์",  room: "333", cat: "cat-eng"  },
-    { subject: "EngSME",       teacher: "แก่นกานต์",  room: "333", cat: "cat-eng"  },
-    { subject: "ภาษาไทย",      teacher: "เกียรติสุดา", room: "333", cat: "cat-thai" },
-    null, // ค้นคว้า
-    { subject: "สังคมศึกษา",  teacher: "ประพาก",           room: "333", cat: "cat-soc"  },
-    { subject: "ชีววิทยา",     teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
-    { subject: "ชีววิทยา",     teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
-    null, // จิตอาสา
+    { subject: "EngSME",     teacher: "แก่นกานต์",  room: "333", cat: "cat-eng"  },
+    { subject: "EngSME",     teacher: "แก่นกานต์",  room: "333", cat: "cat-eng"  },
+    { subject: "ภาษาไทย",    teacher: "เกียรติสุดา", room: "333", cat: "cat-thai" },
+    { subject: "ฟิสิกส์",     teacher: "รังสิมา",    room: "333", cat: "cat-sci"  },
+    { subject: "สังคมศึกษา", teacher: "ประพาก",     room: "333", cat: "cat-soc"  },
+    { subject: "วิทยาศาสตร์กายภาพ",   teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
+    { subject: "วิทยาศาสตร์กายภาพ",   teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
+    { subject: "วิทยาศาสตร์กายภาพ",   teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
   ],
   อังคาร: [
-    { subject: "สังคมศึกษา",        teacher: "ประพาก",         room: "333", cat: "cat-soc"  },
+    { subject: "สังคมศึกษา",          teacher: "ประพาก",    room: "333",    cat: "cat-soc"    },
     null, // แนะแนว
-    { subject: "English 3 (ฟัง–พูด)", teacher: "",         room: "333", cat: "cat-eng"  },
-    { subject: "English 3 (ฟัง–พูด)", teacher: "",         room: "333", cat: "cat-eng"  },
-    null, // ค้นคว้า
-    { subject: "คณิตศาสตร์",          teacher: "พันธุ์นิภา", room: "333", cat: "cat-math" },
-    { subject: "คณิตศาสตร์เพิ่มเติม",        teacher: "อัจฉรา",   room: "333", cat: "cat-math" },
-    { subject: "คณิตศาสตร์เพิ่มเติม",        teacher: "อัจฉรา",   room: "333", cat: "cat-math" },
+    { subject: "English 3 (ฟัง–พูด)", teacher: "",          room: "333",    cat: "cat-eng"    },
+    { subject: "English 3 (ฟัง–พูด)", teacher: "",          room: "333",    cat: "cat-eng"    },
+    { subject: "สุขศึกษาและพลศึกษา",  teacher: "สุวิท",     room: "โรงยิม", cat: "cat-health" },
+    { subject: "เคมี",                teacher: "จิรารัตน์", room: "333",    cat: "cat-sci"    },
+    { subject: "คณิตศาสตร์เพิ่มเติม", teacher: "อัจฉรา",    room: "333",    cat: "cat-math"   },
+    { subject: "คณิตศาสตร์เพิ่มเติม", teacher: "อัจฉรา",    room: "333",    cat: "cat-math"   },
   ],
   พุธ: [
-    { subject: "สุขศึกษาและพลศึกษา",   teacher: "สุวิท",     room: "โรงยิม", cat: "cat-health" },
-    { subject: "เคมี",     teacher: "จิรารัตน์", room: "333",    cat: "cat-sci"    },
-    { subject: "เคมี",     teacher: "จิรารัตน์", room: "333",    cat: "cat-sci"    },
-    { subject: "ชีววิทยา", teacher: "ยุทธพงษ์",  room: "333",    cat: "cat-sci"    },
-    { subject: "ฟิสิกส์",  teacher: "รังสิมา",   room: "333",    cat: "cat-sci"    },
-    { subject: "ดนตรี",    teacher: "นิธิภูมิ",  room: "312",    cat: "cat-art"  },
-    null, // homeroom
+    { subject: "วิทยาศาสตร์กายภาพ (ฟิสิกส์)", teacher: "รังสิมา",    room: "333", cat: "cat-sci"  },
+    { subject: "คณิตศาสตร์",          teacher: "พันธุ์นิภา", room: "333", cat: "cat-math" },
+    { subject: "วิทยาศาสตร์กายภาพ (เคมี)", teacher: "จิรารัตน์",  room: "333", cat: "cat-sci"  },
+    { subject: "วิทยาศาสตร์กายภาพ (เคมี)", teacher: "จิรารัตน์",  room: "333", cat: "cat-sci"  },
+    { subject: "ชีววิทยา",            teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
+    { subject: "ชีววิทยา",            teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
+    { subject: "ชีววิทยา",            teacher: "ยุทธพงษ์",   room: "333", cat: "cat-sci"  },
     null, // ชุมนุม
   ],
   พฤหัสบดี: [
-    { subject: "การงานอาชีพ",       teacher: "เกศราภรณ์", room: "511", cat: "cat-work" },
-    { subject: "การงานอาชีพ",       teacher: "เกศราภรณ์", room: "511", cat: "cat-work" },
-    { subject: "คณิตศาสตร์เพิ่มเติม", teacher: "อัจฉรา",   room: "333", cat: "cat-math" },
-    { subject: "ภาษาไทย",       teacher: "เกียรติสุดา", room: "333", cat: "cat-thai" },
-    { subject: "วิทยาการคำนวณ",       teacher: "ชัยยศ",     room: "721", cat: "cat-sci"  },
-    { subject: "เคมี",          teacher: "จิรารัตน์", room: "333", cat: "cat-sci"  },
-    { subject: "ฟิสิกส์",       teacher: "รังสิมา",   room: "333", cat: "cat-sci"  },
+    { subject: "เคมี",                teacher: "จิรารัตน์",  room: "333", cat: "cat-sci"  },
+    { subject: "เคมี",                teacher: "จิรารัตน์",  room: "333", cat: "cat-sci"  },
+    { subject: "คณิตศาสตร์เพิ่มเติม", teacher: "อัจฉรา",     room: "333", cat: "cat-math" },
+    { subject: "ภาษาไทย",             teacher: "เกียรติสุดา", room: "333", cat: "cat-thai" },
+    { subject: "นาฏศิลป์",            teacher: "วิมวิภา",    room: "421", cat: "cat-art"  },
+    { subject: "วิทยาศาสตร์กายภาพ (ฟิสิกส์)", teacher: "รังสิมา",    room: "333", cat: "cat-sci"  },
+    { subject: "วิทยาศาสตร์กายภาพ (ฟิสิกส์)", teacher: "รังสิมา",    room: "333", cat: "cat-sci"  },
     null, // ค้นคว้า
   ],
   ศุกร์: [
-    { subject: "คณิตศาสตร์เพิ่มเติม", teacher: "อัจฉรา",    room: "333", cat: "cat-math" },
-    { subject: "ฟิสิกส์",       teacher: "รังสิมา",   room: "333", cat: "cat-sci"  },
-    { subject: "ฟิสิกส์",       teacher: "รังสิมา",   room: "333", cat: "cat-sci"  },
-    null, // เวรอาหาร/จิตอาสา
-    { subject: "อังกฤษ",        teacher: "แก่นกานต์", room: "333", cat: "cat-eng"  },
-    { subject: "อังกฤษ",        teacher: "แก่นกานต์", room: "333", cat: "cat-eng"  },
-    { subject: "คณิตศาสตร์",    teacher: "พันธุ์นิภา", room: "333", cat: "cat-math" },
+    { subject: "คณิตศาสตร์เพิ่มเติม", teacher: "อัจฉรา",     room: "333", cat: "cat-math" },
+    { subject: "ฟิสิกส์",             teacher: "รังสิมา",    room: "333", cat: "cat-sci"  },
+    { subject: "ฟิสิกส์",             teacher: "รังสิมา",    room: "333", cat: "cat-sci"  },
+    null, // Homeroom / จิตอาสา
+    { subject: "อังกฤษ",              teacher: "แก่นกานต์",  room: "333", cat: "cat-eng"  },
+    { subject: "อังกฤษ",              teacher: "แก่นกานต์",  room: "333", cat: "cat-eng"  },
+    { subject: "คณิตศาสตร์",          teacher: "พันธุ์นิภา", room: "333", cat: "cat-math" },
     null, // ประชุม
   ],
 };
